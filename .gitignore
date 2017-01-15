@@ -2,3 +2,4 @@
 /composer.lock
 /nbproject/
 /bin/cimsusertool.phar
+/bin/cimsusertool*.rpm
