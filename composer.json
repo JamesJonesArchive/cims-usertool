@@ -1,0 +1,24 @@
+{
+    "name": "usf-it/cims-usertool",
+    "description": "Command-line tool for sending update requests",
+    "type": "project",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "James Jones",
+            "email": "jamjon3@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "guzzlehttp/guzzle": "6.2.2",
+        "symfony/console": "v3.2.2",
+        "kherge/box": "2.7.5"
+    },
+    "autoload": {
+        "psr-4" : {
+            "USF\\IdM\\" : "src/"
+        }
+    }
+
+}
