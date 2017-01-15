@@ -2,10 +2,10 @@
     "chmod": "0755",
     "directories": [
         "src",
-        "app"
+        "vendor"
     ],
-    "files": ["README.md"],
-    "main": "app/console",
-    "output": "cimsusertool.phar",
+    "files": ["README.md","bin/console"],
+    "main": "bin/console",
+    "output": "bin/cimsusertool.phar",
     "stub": true
 }
