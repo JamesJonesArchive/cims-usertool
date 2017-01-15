@@ -14,4 +14,4 @@ echo "**************************************************************************
 echo "**************************************************************************"
 echo "* Building the bin cimusertool RPM file                                  *"
 echo "**************************************************************************"
-fpm --force -s dir -t rpm -n 'cimsusertool' -v '1.0.0' --iteration '1' --description 'USF Command-line tool for AD requests' --vendor 'University of South Florida' --config-files '/usr/local/etc/casvoterimport/settings.yml' -p 'bin' 'bin/cimsusertool.phar'='/usr/local/bin/cimsusertool' 'config/settings.yml'='/usr/local/etc/casvoterimport/settings.yml'
+fpm --force -s dir -t rpm -n 'cimsusertool' -v '1.0.0' --iteration '1' --description 'USF Command-line tool for AD requests' --vendor 'University of South Florida' --config-files '/usr/local/etc/cimsusertool/settings.yml' -p 'bin' 'bin/cimsusertool.phar'='/usr/local/bin/cimsusertool' 'config/settings.yml'='/usr/local/etc/cimsusertool/settings.yml'
