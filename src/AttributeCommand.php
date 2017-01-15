@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace USF\Idm\cims_usertool\command;
+namespace USF\Idm\usertool;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

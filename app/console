@@ -15,7 +15,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 // import the Symfony Console Application 
 use Symfony\Component\Console\Application; 
-use USF\IdM\cims-usertool\AttributeCommand;
+use USF\IdM\usertool\AttributeCommand;
 $app = new Application();
 $app->add(new AttributeCommand());
 $app->run();
