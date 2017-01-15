@@ -13,6 +13,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Client;
 /**
  * Description of AttributeCommand
  *
@@ -45,9 +47,12 @@ class AttributeCommand extends Command {
             InputOption::VALUE_REQUIRED,
             'value',
             1
-        );
+        )->setGuzzle(new \GuzzleHttp\Client());
+        
     }
-    
+    private function setGuzzle($guzzleclient) {
+        $this->guzzleclient = $guzzleclient;
+    }
     protected function execute(InputInterface $input, OutputInterface $output) {
         
         
@@ -73,5 +78,13 @@ class AttributeCommand extends Command {
     }
     
             
-    //put your code here
+    public function addAttribute() {
+        $headers = ['X-Foo' => 'Bar'];
+        $body = 'hello!';
+        $request = $this->guzzleclient->post('http://httpbin.org/get',$headers,$body);
+        
+        
+        
+        
+    }
 }
