@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4" : {
-            "USF\\IdM\\" : "src/"
+            "USF\\IdM\\cims-usertool\\" : "src/"
         }
     }
 
