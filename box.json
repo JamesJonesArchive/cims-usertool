@@ -1,0 +1,11 @@
+{
+    "chmod": "0755",
+    "directories": [
+        "src",
+        "app"
+    ],
+    "files": ["README.md"],
+    "main": "app/console",
+    "output": "cimsusertool.phar",
+    "stub": true
+}
