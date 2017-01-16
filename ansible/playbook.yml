@@ -16,8 +16,6 @@
       with_items:
         - install
         - update 
-      args:
-        chdir: "/vagrant/"
       environment:
         PATH: "/usr/local/bin:~/bin:{{ ansible_env.PATH }}"  
     - name: Install RPM required build packages
