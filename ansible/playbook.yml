@@ -16,4 +16,6 @@
       with_items:
         - install
         - update 
+      environment:
+        PATH: "/usr/local/bin:{{ ansible_env.PATH }}"  
 
