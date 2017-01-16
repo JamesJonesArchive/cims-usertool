@@ -1,5 +1,5 @@
 node('master') {
-    env.PATH = "/usr/local/bin:${env.JENKINS_HOME}/bin:${env.PATH}"
+    env.PATH = "/usr/local/bin:${env.JENKINS_HOME}/bin:/usr/local/bin:${env.PATH}"
     checkout scm
     stage('Build CIMS usertool') {
         sh "vagrant halt --force || true"
