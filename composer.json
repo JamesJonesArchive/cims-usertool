@@ -1,6 +1,8 @@
 {
     "name": "usf-it/cims-usertool",
-    "description": "Command-line tool for sending update requests",
+    "version": "0.9.0",
+    "iteration": "1",
+    "description": "USF Command-line tool for AD requests",
     "type": "project",
     "license": "Apache-2.0",
     "authors": [

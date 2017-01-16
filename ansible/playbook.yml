@@ -6,7 +6,7 @@
     - repo-remi
     - php_upgrade
   tasks:
-    - name: Update composer dependencies for Visor
+    - name: Update composer dependencies for CIMS Usertool
       composer:
         command: "{{ item }}"
         working_dir: "/vagrant/"
@@ -18,4 +18,23 @@
         - update 
       environment:
         PATH: "/usr/local/bin:{{ ansible_env.PATH }}"  
-
+    - name: Install RPM required build packages
+      yum: 
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - epel-release
+        - git
+        - ruby
+        - ruby-devel
+        - rubygems
+        - rpm-build
+      tags:
+        - Visor
+    - name: Ensure the fpm gem installed
+      command: gem install fpm
+    - name: Build FetchSupervisors RPM
+      # shell: "fpm -s dir -t rpm -n {{ build_version.split('-') | first | quote }} -v {{ build_version.split('-') | last | quote }} --iteration {{ package_revision | quote }} --description {{ 'USF Visor Supervisor Fetcher' | quote }} --vendor {{ 'University of South Florida' | quote }} -d {{ 'haveged' | quote }} --config-files {{ visor_config_dir }}/FetchSupervisors.config.groovy -p ../FetchSupervisors/build/distributions ./FetchSupervisors/{{ build_version }}/.=/opt/{{ build_version }} {{ java_home }}/.=/opt/{{ build_version }}/jdk8 ./FetchSupervisors/FetchSupervisors.cron=/opt/{{ build_version }}/bin/FetchSupervisors.cron ./FetchSupervisors/FetchSupervisors.config.groovy={{ visor_config_dir }}/FetchSupervisors.config.groovy"
+      shell: "fpm --force -s dir -t rpm -n {{ composer_settings.name.split('/') | last | quote }} -v {{ composer_settings.version | quote }} --iteration {{ composer_settings.iteration | quote }}'1' --description {{ composer_settings.description | quote }} --vendor 'University of South Florida' --config-files '/usr/local/etc/cimsusertool/settings.yml' -p 'bin' 'bin/cimsusertool.phar'='/usr/local/bin/cimsusertool' 'config/settings.yml'='/usr/local/etc/cimsusertool/settings.yml'"
+      environment:
+        PATH: "/usr/local/bin:{{ ansible_env.PATH }}"  
