@@ -3,6 +3,7 @@
   vars:
     composer_settings: "{{ lookup('file','../composer.json') | from_json }}"
   roles:
+    - repo-epel
     - repo-remi
     - php_upgrade
     - composer
