@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  vars:
+    composer_settings: "{{ lookup('file','../composer.json') | from_json }}"
+
