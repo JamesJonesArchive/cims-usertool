@@ -1,7 +1,10 @@
 ---
-- hosts: localhost
+- hosts: all
   vars:
     composer_settings: "{{ lookup('file','../composer.json') | from_json }}"
+  roles:
+    - repo-remi
+    - php_upgrade
   tasks:
     - name: Update composer dependencies for Visor
       composer:

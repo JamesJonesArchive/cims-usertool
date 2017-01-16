@@ -54,7 +54,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        ansible.extra_vars = {
            vagrant_vm: true,
            remote_user: "vagrant",
-           visor_web_fqdn: "usertool.vagrant.dev",
+           usertool_web_fqdn: "usertool.vagrant.dev",
            web_server_group: "vagrant",
            web_server_user: "vagrant"
            # composer_github_oauth: "#{ENV['USF_GIT_OAUTH_KEY']}",
