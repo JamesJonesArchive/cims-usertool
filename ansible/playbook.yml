@@ -2,4 +2,15 @@
 - hosts: localhost
   vars:
     composer_settings: "{{ lookup('file','../composer.json') | from_json }}"
+  tasks:
+    - name: Update composer dependencies for Visor
+      composer:
+        command: "{{ item }}"
+        working_dir: "/vagrant/"
+        # no_dev: false
+      become: yes
+      become_user: "vagrant" 
+      with_items:
+        - install
+        - update 
 
