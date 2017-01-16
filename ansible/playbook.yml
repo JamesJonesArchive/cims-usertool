@@ -35,7 +35,7 @@
       command: gem install fpm
     - name: Build CIMS usertool RPM
       shell: "{{ item }}"
-      with_item:
+      with_items:
         - "vendor/bin/box build"
         - "rm -Rf bin/*.rpm"
         - "fpm --force -s dir -t rpm -n {{ composer_settings.name.split('/') | last | quote }} -v {{ composer_settings.version | quote }} --iteration {{ composer_settings.iteration | quote }}'1' --description {{ composer_settings.description | quote }} --vendor 'University of South Florida' --config-files '/usr/local/etc/cimsusertool/settings.yml' -p 'bin' 'bin/cimsusertool.phar'='/usr/local/bin/cimsusertool' 'config/settings.yml'='/usr/local/etc/cimsusertool/settings.yml'"

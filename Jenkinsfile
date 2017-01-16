@@ -18,6 +18,9 @@ node('master') {
         // sh "ansible-playbook -i 'localhost,' -c local --vault-password-file=${env.USF_ANSIBLE_VAULT_KEY} ansible/playbook.yml --extra-vars 'java_home=${env.JAVA_HOME} package_revision=${env.PACKAGE_REVISION}' -t Visor -vvv"
         // stash name: "imageservicerpm", includes: "ImageService/build/distributions/ImageService*.rpm"
     }
+    stage('Archive RPM') {
+        archiveArtifacts artifacts: 'bin/cims*.rpm'
+    }
 }
 
     
