@@ -20,6 +20,7 @@
         "psr-4" : {
             "USF\\IdM\\usertool\\" : "src/"
         }
-    }
-
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
