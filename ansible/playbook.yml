@@ -8,6 +8,11 @@
     - php_upgrade
     - composer
   tasks:
+    - name: Enable php-56 and update
+      yum:
+        name: "*"
+        enablerepo: remi-php56
+        state: latest
     - name: Update composer dependencies for CIMS Usertool
       composer:
         command: "{{ item }}"
@@ -31,11 +36,6 @@
         - ruby-devel
         - rubygems
         - rpm-build
-    - name: Enable php-56 and install it
-      yum:
-        name: "*"
-        enablerepo: remi-php56
-        state: latest
     - name: Ensure the fpm gem installed
       command: gem install fpm
     - name: Build CIMS usertool RPM
