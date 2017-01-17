@@ -2,7 +2,7 @@
 /composer.lock
 /nbproject/
 /bin/cimsusertool.phar
-/bin/cimsusertool*.rpm
+/bin/cims-usertool*.rpm
 /.vagrant/
 /ansible/roles/
 /ansible/playbook.retry

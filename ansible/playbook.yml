@@ -46,6 +46,8 @@
       command: gem install fpm
     - name: Build CIMS usertool RPM
       shell: "{{ item }}"
+      become: yes
+      become_user: "vagrant" 
       with_items:
         - "vendor/bin/box build"
         - "rm -Rf bin/*.rpm"
