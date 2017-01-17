@@ -47,7 +47,7 @@ class AttributeCommand extends Command {
 
 
         try {
-            $value = Yaml::parse(file_get_contents('/usr/local/etc/casvoterimport/settings.yml'));
+            $value = Yaml::parse(file_get_contents('/usr/local/etc/cimsusertool/settings.yml'));
         } catch (ParseException $e) {
             printf("Unable to parse the YAML string: %s", $e->getMessage());
         }
