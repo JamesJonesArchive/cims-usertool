@@ -49,15 +49,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        ansible.groups = {
           "usertool" => ["usertoolvm"]
        }
-       # ansible.vault_password_file = "#{ENV['USF_ANSIBLE_VAULT_KEY']}"
+       ansible.vault_password_file = "#{ENV['USF_ANSIBLE_VAULT_KEY']}"
        ansible.sudo = true
        ansible.extra_vars = {
            vagrant_vm: true,
            remote_user: "vagrant",
            usertool_web_fqdn: "usertool.vagrant.dev",
            web_server_group: "vagrant",
-           web_server_user: "vagrant"
-           # composer_github_oauth: "#{ENV['USF_GIT_OAUTH_KEY']}",
+           web_server_user: "vagrant",
+           composer_github_oauth: "#{ENV['USF_GIT_OAUTH_KEY']}"
            # package_revision: "#{ENV['PACKAGE_REVISION']}"
        }
        # ansible.tags = "Visor"
