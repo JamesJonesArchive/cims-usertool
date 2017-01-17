@@ -3,3 +3,6 @@
 /nbproject/
 /bin/cimsusertool.phar
 /bin/cimsusertool*.rpm
+/.vagrant/
+/ansible/roles/
+/ansible/playlist.retry
