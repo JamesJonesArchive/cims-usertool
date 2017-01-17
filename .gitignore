@@ -5,4 +5,4 @@
 /bin/cimsusertool*.rpm
 /.vagrant/
 /ansible/roles/
-/ansible/playlist.retry
+/ansible/playbook.retry
