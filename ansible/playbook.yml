@@ -10,7 +10,7 @@
   tasks:
     - name: Enable php-56 and update
       yum:
-        name: "*"
+        name: "php"
         enablerepo: remi-php56
         state: latest
     - name: Update composer dependencies for CIMS Usertool
