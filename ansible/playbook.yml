@@ -13,6 +13,12 @@
         name: "php"
         enablerepo: remi-php56
         state: latest
+    - name: Add phar.readonly to php.ini
+      ini_file:
+        dest: /etc/php.ini
+        section: Phar
+        option: phar.readonly
+        value: Off
     - name: Update composer dependencies for CIMS Usertool
       composer:
         command: "{{ item }}"
